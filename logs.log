@@ -1,0 +1,271 @@
+INFO:sqlalchemy.engine.base.Engine:SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:PRAGMA table_info("task")
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:PRAGMA table_info("project")
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:PRAGMA table_info("user")
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:werkzeug: * Restarting with stat
+INFO:sqlalchemy.engine.base.Engine:SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:PRAGMA table_info("task")
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:PRAGMA table_info("project")
+INFO:sqlalchemy.engine.base.Engine:()
+INFO:sqlalchemy.engine.base.Engine:PRAGMA table_info("user")
+INFO:sqlalchemy.engine.base.Engine:()
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 115-179-398
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:19:43] "GET /app/user/logout/ HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:19:43] "GET /static/css/style.css HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:19:43] "GET /static/js/jquery.min.js HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:19:43] "GET /static/js/requests.js HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:19:43] "GET /static/css/css.css HTTP/1.1" 304 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.username = ?
+ LIMIT ? OFFSET ?
+INFO:sqlalchemy.engine.base.Engine:('Admin', 1, 0)
+INFO:sqlalchemy.engine.base.Engine:INSERT INTO user (name, email, username, password) VALUES (?, ?, ?, ?)
+INFO:sqlalchemy.engine.base.Engine:('Admin', 'mail@mail.com', 'Admin', b'$2b$12$S5EzHvMvntiLUgY6uSdTL.i/6LKensGUVvcgFXltgqc7tpCdt1ohK')
+INFO:sqlalchemy.engine.base.Engine:COMMIT
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE ? = project.user_id
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:20:08] "POST /api/user/register/ HTTP/1.1" 200 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.username = ?
+ LIMIT ? OFFSET ?
+INFO:sqlalchemy.engine.base.Engine:('Admin', 1, 0)
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:20:14] "POST /api/user/login/ HTTP/1.1" 200 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:20:14] "GET /app/board HTTP/1.1" 304 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE ? = project.user_id
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:20:14] "GET /api/current_user HTTP/1.1" 200 -
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project JOIN user ON user.id = project.user_id 
+WHERE project.user_id = ? ORDER BY project.last_updated DESC
+INFO:sqlalchemy.engine.base.Engine:('1',)
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:20:14] "GET /api/projects HTTP/1.1" 400 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE project.name = ?
+ LIMIT ? OFFSET ?
+INFO:sqlalchemy.engine.base.Engine:('ProjectOne', 1, 0)
+INFO:sqlalchemy.engine.base.Engine:INSERT INTO project (name, creation_date, last_updated, user_id) VALUES (?, ?, ?, ?)
+INFO:sqlalchemy.engine.base.Engine:('ProjectOne', '2018-06-17 02:20:24.067836', '2018-06-17 02:20:24.067836', '1')
+INFO:sqlalchemy.engine.base.Engine:COMMIT
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE project.user_id = ? AND project.name = ?
+ LIMIT ? OFFSET ?
+INFO:sqlalchemy.engine.base.Engine:('1', 'ProjectOne', 1, 0)
+INFO:sqlalchemy.engine.base.Engine:SELECT task.id AS task_id, task.title AS task_title, task."order" AS task_order, task.creation_date AS task_creation_date, task.due_date AS task_due_date, task.completed AS task_completed, task.project_id AS task_project_id 
+FROM task 
+WHERE ? = task.project_id
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:20:24] "POST /api/projects HTTP/1.1" 200 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project JOIN user ON user.id = project.user_id 
+WHERE project.user_id = ? ORDER BY project.last_updated DESC
+INFO:sqlalchemy.engine.base.Engine:('1',)
+INFO:sqlalchemy.engine.base.Engine:SELECT task.id AS task_id, task.title AS task_title, task."order" AS task_order, task.creation_date AS task_creation_date, task.due_date AS task_due_date, task.completed AS task_completed, task.project_id AS task_project_id 
+FROM task 
+WHERE ? = task.project_id
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:20:24] "GET /api/projects HTTP/1.1" 200 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE project.name = ?
+ LIMIT ? OFFSET ?
+INFO:sqlalchemy.engine.base.Engine:('ProjectTwo', 1, 0)
+INFO:sqlalchemy.engine.base.Engine:INSERT INTO project (name, creation_date, last_updated, user_id) VALUES (?, ?, ?, ?)
+INFO:sqlalchemy.engine.base.Engine:('ProjectTwo', '2018-06-17 02:20:29.585151', '2018-06-17 02:20:29.585151', '1')
+INFO:sqlalchemy.engine.base.Engine:COMMIT
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE project.user_id = ? AND project.name = ?
+ LIMIT ? OFFSET ?
+INFO:sqlalchemy.engine.base.Engine:('1', 'ProjectTwo', 1, 0)
+INFO:sqlalchemy.engine.base.Engine:SELECT task.id AS task_id, task.title AS task_title, task."order" AS task_order, task.creation_date AS task_creation_date, task.due_date AS task_due_date, task.completed AS task_completed, task.project_id AS task_project_id 
+FROM task 
+WHERE ? = task.project_id
+INFO:sqlalchemy.engine.base.Engine:(2,)
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:20:29] "POST /api/projects HTTP/1.1" 200 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project JOIN user ON user.id = project.user_id 
+WHERE project.user_id = ? ORDER BY project.last_updated DESC
+INFO:sqlalchemy.engine.base.Engine:('1',)
+INFO:sqlalchemy.engine.base.Engine:SELECT task.id AS task_id, task.title AS task_title, task."order" AS task_order, task.creation_date AS task_creation_date, task.due_date AS task_due_date, task.completed AS task_completed, task.project_id AS task_project_id 
+FROM task 
+WHERE ? = task.project_id
+INFO:sqlalchemy.engine.base.Engine:(2,)
+INFO:sqlalchemy.engine.base.Engine:SELECT task.id AS task_id, task.title AS task_title, task."order" AS task_order, task.creation_date AS task_creation_date, task.due_date AS task_due_date, task.completed AS task_completed, task.project_id AS task_project_id 
+FROM task 
+WHERE ? = task.project_id
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:20:29] "GET /api/projects HTTP/1.1" 200 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE project.id = ?
+INFO:sqlalchemy.engine.base.Engine:(2,)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE project.name = ?
+ LIMIT ? OFFSET ?
+INFO:sqlalchemy.engine.base.Engine:('ProjetNewName', 1, 0)
+ERROR:flask.app:Exception on /api/projects/2 [PUT]
+Traceback (most recent call last):
+  File "C:\Users\Perry\PycharmProjects\test\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Perry\PycharmProjects\test\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Perry\PycharmProjects\test\venv\lib\site-packages\flask_restplus\api.py", line 319, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\Perry\PycharmProjects\test\venv\lib\site-packages\flask\views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "C:\Users\Perry\PycharmProjects\test\venv\lib\site-packages\flask_restplus\resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\Perry\PycharmProjects\test\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Perry\PycharmProjects\clean\tp4\routes\api.py", line 190, in put
+    updated_project = db.update_project(old_project, json_object)
+  File "C:\Users\Perry\PycharmProjects\clean\tp4\routes\database\queries.py", line 18, in wrapper
+    if args[0]['user_id']:
+TypeError: 'Project' object is not subscriptable
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:20:37] "PUT /api/projects/2 HTTP/1.1" 500 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE project.id = ?
+INFO:sqlalchemy.engine.base.Engine:(2,)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE project.name = ?
+ LIMIT ? OFFSET ?
+INFO:sqlalchemy.engine.base.Engine:('ProjetNewName', 1, 0)
+ERROR:flask.app:Exception on /api/projects/2 [PUT]
+Traceback (most recent call last):
+  File "C:\Users\Perry\PycharmProjects\test\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Perry\PycharmProjects\test\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Perry\PycharmProjects\test\venv\lib\site-packages\flask_restplus\api.py", line 319, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\Perry\PycharmProjects\test\venv\lib\site-packages\flask\views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "C:\Users\Perry\PycharmProjects\test\venv\lib\site-packages\flask_restplus\resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\Perry\PycharmProjects\test\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Perry\PycharmProjects\clean\tp4\routes\api.py", line 190, in put
+    updated_project = db.update_project(old_project, json_object)
+  File "C:\Users\Perry\PycharmProjects\clean\tp4\routes\database\queries.py", line 18, in wrapper
+    if args[0]['user_id']:
+TypeError: 'Project' object is not subscriptable
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:20:41] "PUT /api/projects/2 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:20:51] "GET /static/css/style_main.css HTTP/1.1" 200 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE project.id = ?
+INFO:sqlalchemy.engine.base.Engine:(2,)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE project.name = ?
+ LIMIT ? OFFSET ?
+INFO:sqlalchemy.engine.base.Engine:('ProjetNewName', 1, 0)
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [17/Jun/2018 03:20:54] "PUT /api/projects/2 HTTP/1.1" 500 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.username AS user_username, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+INFO:sqlalchemy.engine.base.Engine:(1,)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE project.id = ?
+INFO:sqlalchemy.engine.base.Engine:(2,)
+INFO:sqlalchemy.engine.base.Engine:SELECT project.id AS project_id, project.name AS project_name, project.creation_date AS project_creation_date, project.last_updated AS project_last_updated, project.user_id AS project_user_id 
+FROM project 
+WHERE project.name = ?
+ LIMIT ? OFFSET ?
+INFO:sqlalchemy.engine.base.Engine:('ProjetNewName', 1, 0)
