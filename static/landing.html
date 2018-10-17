@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title>REST Client</title>
+	<link rel=stylesheet type="text/css" href="/static/css/style.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/requests.js"></script>
+</head>
+<body>
+<div id="toggle_opt_div">
+
+	</div>
+  <div class="login">
+	<h1>Login</h1>
+    <form id="form_login" name="form_login">
+
+		<input type="text" name="username_l" placeholder="Username" required="required" />
+        <input type="password" name="password_l" placeholder="Password" required="required" />
+
+        <input type="submit" value="Submit" class="btn btn-primary btn-block btn-large"/>
+    </form>
+	
+      <h4><u>OR</u></h4>
+      <h1>Register</h1>
+      <form id="form_register" name="form_register">
+
+		<input type="text" name="name_r" placeholder="Name" required="required" minlength="2" maxlength="30"/>
+		<input type="text" name="username_r" placeholder="Username" required="required" minlength="4" maxlength="30"/>
+		<input type="email" name="email_r" placeholder="Email" required="required" />
+        <input type="password" name="password_r" placeholder="Password" required="required" />
+
+        <input type="submit" value="Submit" class="btn btn-primary btn-block btn-large"/>
+    </form>
+</div>
+</body>
+</html>

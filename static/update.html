@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title>REST Client</title>
+	<link rel=stylesheet type="text/css" href="/static/css/style.css">
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/update.js"></script>
+</head>
+<body>
+	<button onclick="location.href='/app/board';" id="goBack_bt" class="btn btn-primary btn-large">< Return</button>
+	
+	<div id="toggle_opt_div">
+
+	</div>
+	
+  <div class="login">
+	<h1>Update Info</h1>
+    <form id="form_update_n" name="form_update_n">
+
+		<input type="text" name="name" placeholder="Name" required="required" minlength="2" maxlength="30"/>
+		<input type="text" name="username" placeholder="Username" required="required" minlength="4" maxlength="30"/>
+		<input type="email" name="email" placeholder="Email" required="required" />
+
+        <input type="submit" value="Submit" class="btn btn-primary btn-block btn-large"/>
+    </form>
+  <h1>Update Password</h1>
+      <form id="form_update_p" name="form_update_p">
+
+        <input type="password" name="password_a" placeholder="Old Password" required="required" />
+        <input type="password" name="password_n" placeholder="New Password" required="required" />
+
+        <input type="submit" value="Submit" class="btn btn-primary btn-block btn-large"/>
+    </form>
+</div>
+</body>
+</html>

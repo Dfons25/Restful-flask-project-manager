@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title>REST Client</title>
+<link rel=stylesheet type="text/css" href="/static/css/style_main.css">
+<script src="/static/js/jquery.min.js"></script>
+
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+
+<script src="/static/js/board.js"></script>
+
+</head>
+<body>
+<h1 id="user_name"></h1>
+
+
+	<button onclick="logoutUser()" id="logout_bt" class="btn btn-primary ">< logout</button>
+	<button onclick="location.href='/app/user';"  id="upuser_bt" class="btn btn-primary ">update user ></button>
+	
+	<div id="toggle_opt_div">
+
+	</div>
+	
+	<div class="div_left" id="div_left">
+
+		
+	</div>
+		 
+	
+	<div class="div_right" id="div_right">
+	<div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy"><input class="form-control" type="text" readonly /><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span></div>
+		<div id="right_wrapper">
+	
+	
+		</div>
+	</div>
+	
+	<input type="hidden" id="user_id" />
+	<input type="hidden" id="project_name" />
+	<input type="hidden" id="project_id" />
+</body>
+</html>
